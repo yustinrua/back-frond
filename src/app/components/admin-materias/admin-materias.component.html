@@ -1,0 +1,147 @@
+<div class="mb-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/materias']">Administración de materias</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Materia</li>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary">Información de la materia</h5>
+        <form id="materiaEdit">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="materia">
+                            Materia
+                        </label>
+                        <select class="form-control" id="materia">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="profesor">
+                            Profesor
+                        </label>
+                        <select class="form-control" id="profesor">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label for="grado">
+                            Grado(s)
+                        </label>
+                        <select class="form-control" id="grado">
+                            <option selected></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary">Estudiantes</h5>
+        <form action="estudiantesMateria">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="estudiante">
+                            Estudiante
+                        </label>
+                        <select class="form-control" id="estudiante">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="codigoEstudiante">
+                            Código estudiante
+                        </label>
+                        <select class="form-control" id="codigoEstudiante">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-auto mt-3">
+                    <button class="btn btn-primary px-md-3" id="" type="submit" title="Buscar">Buscar</button>
+                </div>
+                <div class="col-md-auto mt-3">
+                    <a href="javascript:;" class="text-primary font-weight-bold"><u>Limpiar filtros</u></a>
+                </div>
+            </div>
+        </form>
+        <table id="Cursos" class="table table-striped table-sm table-hover dataTable no-footer" role="grid">
+            <thead class="bg-thead text-light">
+                <tr role="row">
+                    <th>Código</th>
+                    <th>Estudiante</th>
+                    <th>Grado</th>
+                    <th>Grupo</th>
+                    <th>Estado</th>
+                    <th>Nota promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="">2022101</td>
+                    <td>2022</td>
+                    <td>10</td>
+                    <td>A</td>
+                    <td class="col-md-3">
+                        <select class="form-control w-50" id="curso">
+                            <option selected>En curso</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control w-50" name="nota">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">2022101</td>
+                    <td>2022</td>
+                    <td>10</td>
+                    <td>A</td>
+                    <td class="col-md-3">
+                        <select class="form-control w-50" id="curso">
+                            <option selected>En curso</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control w-50" name="nota">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">2022101</td>
+                    <td>2022</td>
+                    <td>10</td>
+                    <td>A</td>
+                    <td class="col-md-3">
+                        <select class="form-control w-50" id="curso">
+                            <option selected>En curso</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control w-50" name="nota">
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row justify-content-end mb-4">
+    <div class="col-md-auto">
+        <a [routerLink]="['/materias']" class="btn btn-outline-primary btn-block" type="button" title="Cancelar" >Cancelar</a>
+    </div>
+    <div class="col-md-auto">
+        <button class="btn btn-primary btn-block" type="button" title="Guardar">Guardar</button>
+    </div>
+</div>

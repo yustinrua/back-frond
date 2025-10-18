@@ -1,0 +1,109 @@
+<div class="col-md-12 mb-3">
+    <div class="row justify-content-between align-items-center">
+        <p class="mb-0 text-primary fs-18">Administración de materias</p>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/adminMaterias']">
+            <i class="fa-solid fa-circle-plus pr-2"></i>
+            Nuevo registro
+        </button>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body px-0">
+        <form id="materia">
+            <div class="col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <label for="grado">
+                                Grado
+                            </label>
+                            <select class="form-control" id="grado">
+                                <option selected></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <label for="grupo">
+                                Grupo
+                            </label>
+                            <select class="form-control" id="grado">
+                                <option selected></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="materia">
+                                Materia
+                            </label>
+                            <select class="form-control" id="materia" (change)="capturarId($event)">
+                                <option selected></option>
+                                <option *ngFor="let item of listaMateriasSelect" [value]="item.idMateria"
+                                    >{{item.nombre}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="profesor">
+                                Profesor
+                            </label>
+                            <select class="form-control" id="profesor">
+                                <option selected>Seleccionar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-auto mt-3">
+                        <button class="btn btn-primary px-md-3" id="" (click)="findMateria()"
+                            title="Buscar">Buscar</button>
+                    </div>
+                    <div class="col-md-auto mt-3">
+                        <a href="javascript:;" class="text-primary font-weight-bold"><u>Limpiar filtros</u></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card" *ngIf="listaMaterias.length > 0">
+    <div class="card-body">
+        <h5 class="mb-3 title">Resultados</h5>
+        <table id="" class="table table-striped table-sm table-hover dataTable no-footer" role="grid">
+            <thead class="bg-thead text-light">
+                <tr role="row">
+                    <th>Código </th>
+                    <th>Materia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listaMaterias">
+                    <td>{{item.idMateria}}</td>
+                    <td>{{item.nombre}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalMateria" tabindex="-1" role="dialog" aria-labelledby="modalMateria" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalMateria">Eliminar [nombre_materia]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" type="button" title="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro que deseas eliminar la materia?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal" type="button"
+                    title="no">No</button>
+                <button type="button" class="btn btn-primary">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

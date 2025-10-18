@@ -1,0 +1,188 @@
+<div class="mb-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/adminEstudiantes']">Administración de estudiantes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Estudiante</li>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary">Información del estudiante</h5>
+        <form id="">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Código</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="23235352221">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Identificación</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <select class="form-control" id="tipoIdentificacion">
+                                    <option selected></option>
+                                    <option value="1">TI</option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" id="numero-documento" name="Número documento" placeholder="Número documento">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Primer nombre</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese el primer nombre">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Segundo nombre <small class="text-muted">(Opcional)</small></label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese el segundo nombre">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Primer apellido</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese el primer apellido">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Segundo apellido <small>(Opcional)</small></label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese el segundo apellido">
+                    </div>
+                </div>
+                <div class="col 12 col-md-3">
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <div class="radio radio-primary">
+                            <input type="radio" value="M" name="personaJuridica" id="Masculino">
+                            <label class="mr-3" for="Masculino">Masculino</label>
+                            <input type="radio" value="F" name="personaJuridica" id="Femenino">
+                            <label for="Femenino">Femenino</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Fecha de nacimiento</label>
+                        <input class="form-control datepicker-range" type="text" name="fechaNacimiento" placeholder="DD/MM/AAAA" id="fechaNacimiento" ng-model="ctx.inscripcion.fechaNacimiento" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Teléfono residencia <small class="text-muted">(Opcional)</small></label>
+                        <input type="text" class="form-control" name="Teléfono residencia" placeholder="Ingrese el número">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input type="text" class="form-control" name="Celular" placeholder="Ingrese el número">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <input type="text" class="form-control" name="Correo electrónico" placeholder="Ej. prueba@correo.com">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Ciudad de residencia</label>
+                        <select class="form-control" id="ciudad">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Dirección de residencia</label>
+                        <input type="text" class="form-control" name="Dirección de residencia" placeholder="Ej. Carrera 12 #45-78 Piso 2">
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label>Grado</label>
+                        <div class="input-daterange input-group datepicker-range">
+                            <select class="form-control" id="grado">
+                                <option selected></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group ">
+                        <label>Grupo</label>
+                        <div class="input-daterange input-group datepicker-range">
+                            <select class="form-control" id="grado">
+                                <option selected></option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary">Cursos realizados</h5>
+        <table id="Cursos" class="table table-striped table-sm table-hover dataTable no-footer" role="grid">
+            <thead class="bg-thead text-light">
+                <tr role="row">
+                    <th>Código </th>
+                    <th>Año</th>
+                    <th>Grado</th>
+                    <th>Grupo</th>
+                    <th class="w-25">Estado</th>
+                    <th class="w-25">Nota promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="">2022101</td>
+                    <td>2022</td>
+                    <td>10</td>
+                    <td>A</td>
+                    <td class="col-md-3">
+                        <select class="form-control w-50" id="curso">
+                            <option selected>En curso</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control w-50" name="nota">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">2022101</td>
+                    <td>2022</td>
+                    <td>10</td>
+                    <td>A</td>
+                    <td>Aprobado</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td class="">2022101</td>
+                    <td>2022</td>
+                    <td>10</td>
+                    <td>A</td>
+                    <td>Aprobado</td>
+                    <td>4.0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row justify-content-end mb-4">
+    <div class="col-md-auto">
+        <a class="btn btn-outline-primary btn-block" type="button" title="Cancelar" [routerLink]="['/adminEstudiantes']">Cancelar</a>
+    </div>
+    <div class="col-md-auto">
+        <button class="btn btn-primary btn-block" type="button" title="Guardar">Guardar</button>
+    </div>
+</div>
